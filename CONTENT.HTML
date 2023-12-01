@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Selection</title>
+    <style>
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+     .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+           margin-bottom: 20px;
+          align-items: center;
+            justify-content: center;
+         padding-left: 20px;
+}
+
+        .box {
+            width: 150px;
+            height: 110px;
+            background-color: yellow;
+            text-align: center;
+            line-height: 110px;
+            cursor: pointer;
+            
+        
+    
+            border-radius: 20px;
+            font-family: cursive;
+             
+            margin: 30px;
+        }
+
+        .dropdown {
+            display: none;
+         
+            background-color: #f9f9f9;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content {
+            padding: 15px;
+            cursor: pointer;
+        }
+                /* Different colors for different subjects */
+        #mathsDropdown {
+            background-color: lightblue;
+        }
+
+        #physicsDropdown {
+            background-color: lightgreen;
+        }
+
+        #chemistryDropdown {
+            background-color: lightcoral;
+        }
+
+        #biologyDropdown {
+            background-color: lightsalmon;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content {
+            padding: 15px;
+            cursor: pointer;
+        }/* Your existing styles remain unchanged */
+    </style>
+    <script>
+        function showDropdown(subject) {
+            // Hide all dropdowns
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                dropdown.style.display = 'none';
+            });
+
+            // Show the dropdown for the selected subject
+            const dropdownId = `${subject}Dropdown`;
+            const dropdown = document.getElementById(dropdownId);
+            if (dropdown) {
+                dropdown.style.display = 'block';
+            }
+        }
+
+        function redirectToClass(subject, className) {
+            // Replace the URL with the desired destination for each class
+            const destinations = {
+                'class8': 'https://example.com/class8',
+                'class9': 'https://example.com/class9',
+                'class10': 'https://example.com/class10',
+                // Add more classes if needed
+            };
+
+            const destination = destinations[className];
+
+            if (destination) {
+                // Redirect to the selected class page
+                window.location.href = destination;
+            }
+        }
+    </script>
+</head>
+<body bgcolor="lightblue">
+
+    <div class="container">
+        <div class="box" onclick="showDropdown('maths')">Maths</div>
+        <div id="mathsDropdown" class="dropdown">
+            <div class="dropdown-content" onclick="redirectToClass('maths', 'class8')">Class 8</div>
+            <div class="dropdown-content" onclick="redirectToClass('maths', 'class9')">Class 9</div>
+            <div class="dropdown-content" onclick="redirectToClass('maths', 'class10')">Class 10</div>
+        </div>
+
+        <div class="box" onclick="showDropdown('physics')">Physics</div>
+        <div id="physicsDropdown" class="dropdown">
+            <div class="dropdown-content" onclick="redirectToClass('physics', 'class8')">Class 8</div>
+            <div class="dropdown-content" onclick="redirectToClass('physics', 'class9')">Class 9</div>
+            <div class="dropdown-content" onclick="redirectToClass('physics', 'class10')">Class 10</div>
+        </div>
+
+        <div class="box" onclick="showDropdown('chemistry')">Chemistry</div>
+        <div id="chemistryDropdown" class="dropdown">
+            <div class="dropdown-content" onclick="redirectToClass('chemistry', 'class8')">Class 8</div>
+            <div class="dropdown-content" onclick="redirectToClass('chemistry', 'class9')">Class 9</div>
+            <div class="dropdown-content" onclick="redirectToClass('chemistry', 'class10')">Class 10</div>
+        </div>
+
+        <div class="box" onclick="showDropdown('biology')">Biology</div>
+        <div id="biologyDropdown" class="dropdown">
+            <div class="dropdown-content" onclick="redirectToClass('biology', 'class8')">Class 8</div>
+            <div class="dropdown-content" onclick="redirectToClass('biology', 'class9')">Class 9</div>
+            <div class="dropdown-content" onclick="redirectToClass('biology', 'class10')">Class 10</div>
+        </div>
+    </div>
+</body>
+</html>
