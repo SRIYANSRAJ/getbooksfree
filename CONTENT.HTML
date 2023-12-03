@@ -54,19 +54,24 @@
         }
                 /* Different colors for different subjects */
         #mathsDropdown {
-            background-color: lightblue;
+            background-color: yellowgreen;
+            color: red;
+          
         }
 
         #physicsDropdown {
             background-color: lightgreen;
+            color: blueviolet;
         }
 
         #chemistryDropdown {
             background-color: lightcoral;
+            color:darkblue;
         }
 
         #biologyDropdown {
             background-color: lightsalmon;
+            color:darkmagenta;
         }
 
         .dropdown {
@@ -96,53 +101,38 @@
             }
         }
 
-        function redirectToClass(subject, className) {
-            // Replace the URL with the desired destination for each class
-            const destinations = {
-                'class8': 'https://example.com/class8',
-                'class9': 'https://example.com/class9',
-                'class10': 'https://example.com/class10',
-                // Add more classes if needed
-            };
-
-            const destination = destinations[className];
-
-            if (destination) {
-                // Redirect to the selected class page
-                window.location.href = destination;
-            }
-        }
+      
     </script>
 </head>
-<body bgcolor="lightblue">
+<body background="b.jpg">
 
     <div class="container">
         <div class="box" onclick="showDropdown('maths')">Maths</div>
         <div id="mathsDropdown" class="dropdown">
-            <div class="dropdown-content" onclick="redirectToClass('maths', 'class8')">Class 8</div>
-            <div class="dropdown-content" onclick="redirectToClass('maths', 'class9')">Class 9</div>
-            <div class="dropdown-content" onclick="redirectToClass('maths', 'class10')">Class 10</div>
+            <div class="dropdown-content" onclick="redirectToClass('maths', 'class8')"><a href="maths8.html">Class 8</a></div>
+            <div class="dropdown-content" onclick="redirectToClass('maths', 'class9')"><a href="maths9.html">Class 9</a></div>
+            <div class="dropdown-content" onclick="redirectToClass('maths', 'class10')"><a href="maths10.html">Class 10</a></div>
         </div>
 
         <div class="box" onclick="showDropdown('physics')">Physics</div>
         <div id="physicsDropdown" class="dropdown">
-            <div class="dropdown-content" onclick="redirectToClass('physics', 'class8')">Class 8</div>
-            <div class="dropdown-content" onclick="redirectToClass('physics', 'class9')">Class 9</div>
-            <div class="dropdown-content" onclick="redirectToClass('physics', 'class10')">Class 10</div>
+            <div class="dropdown-content" onclick="redirectToClass('physics', 'class8')"><a href="phy8.html">Class 8</a></div>
+            <div class="dropdown-content" onclick="redirectToClass('physics', 'class9')"><a href="phy9.html">Class 9</a></div>
+            <div class="dropdown-content" onclick="redirectToClass('physics', 'class10')"><a href="phy10.html">Class 10</a></div>
         </div>
 
         <div class="box" onclick="showDropdown('chemistry')">Chemistry</div>
         <div id="chemistryDropdown" class="dropdown">
-            <div class="dropdown-content" onclick="redirectToClass('chemistry', 'class8')">Class 8</div>
-            <div class="dropdown-content" onclick="redirectToClass('chemistry', 'class9')">Class 9</div>
-            <div class="dropdown-content" onclick="redirectToClass('chemistry', 'class10')">Class 10</div>
+            <div class="dropdown-content" onclick="redirectToClass('chemistry', 'class8')"><a href="che8.html">Class 8</a></div>
+            <div class="dropdown-content" onclick="redirectToClass('chemistry', 'class9')"><a href="che9.html">Class 9</a></div>
+            <div class="dropdown-content" onclick="redirectToClass('chemistry', 'class10')"><a href="che10.html">Class 10</a></div>
         </div>
 
         <div class="box" onclick="showDropdown('biology')">Biology</div>
         <div id="biologyDropdown" class="dropdown">
-            <div class="dropdown-content" onclick="redirectToClass('biology', 'class8')">Class 8</div>
-            <div class="dropdown-content" onclick="redirectToClass('biology', 'class9')">Class 9</div>
-            <div class="dropdown-content" onclick="redirectToClass('biology', 'class10')">Class 10</div>
+            <div class="dropdown-content" onclick="redirectToClass('biology', 'class8')"><a href="bio8.html">Class 8</a></div>
+            <div class="dropdown-content" onclick="redirectToClass('biology', 'class9')"><a href="bio9.html">Class 9</a></div>
+            <div class="dropdown-content" onclick="redirectToClass('biology', 'class10')"><a href="bio10.html">Class 10</a></div>
         </div>
     </div>
 </body>
